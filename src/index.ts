@@ -126,8 +126,8 @@ const runAsync = async (
 }
 
 const run = (solutions: Solutions, inputFile?: string) => {
-  const callerFile = getCallerFile().replace(/(file:\\\\)|(file:\/\/)/, "")
-  const dir = path.parse(callerFile).dir.split(path.sep)
+  const callerFile = getCallerFile().replace(/(file:\\\\)|(file:\/\/\/)|(file:\/\/)/, "")
+  const dir = path.parse(callerFile).dir.split("/")
   const day = Number(
     [...dir]
       .reverse()
